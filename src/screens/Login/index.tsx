@@ -1,11 +1,10 @@
 import Button from "../../components/Button";
 import { Container, Image, ActionsContainer } from "./styles";
-const logo = "../../../assets/Logo.jpg";
 
-function Login({ navigation }: any): JSX.Element {
+function Login({ navigation }: any) {
   return (
     <Container>
-      <Image source={require("../../../assets/Logo.jpg")} />
+      <Image source={require("../../../assets/Logo.png")} />
       <ActionsContainer>
         <Button
           background="#f4a15d"

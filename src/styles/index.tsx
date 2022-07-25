@@ -1,22 +1,22 @@
-import { createGlobalStyle } from "styled-components";
-import { palette } from "./palette";
+export default {
+  COLORS: {
+    background: "#fff",
+    btnPrimary: "#f4a15d",
+    btnSecondary: "#f2f2f2",
+    textButton: "#FFFFFF",
+    text: "#333333",
+    icon: "#FFFFFF",
+    title: "#333333",
+    subtitle: "#4d4d4d",
+    white: "#FFFFFF",
+    dark: "#000000",
+    header: "#FFFFFF",
+  },
 
-const Colors = createGlobalStyle`
-  :root {
-    --primary-color: ${palette.primaryColor};
-    --secondary-color: ${palette.secondaryColor};
-    
-    --primary-text-color: ${palette.primaryTextColor};
-    --secondary-text-color: ${palette.secondaryTextColor};
-    
-    --error-color: ${palette.errorColor};
-    --warning-color: ${palette.warningColor};
-    --success-color: ${palette.successColor};
-    --info-color: ${palette.infoColor};
-    
-    --theme-light-color: ${palette.themeLightColor};
-    --theme-dark-color: ${palette.themeDarkColor};
-  }
-`;
-
-export default Colors;
+  FONTS: {
+    title: "Poppins_700Bold",
+    subtitle: "Poppins_600SemiBold",
+    text: "Poppins_400Regular",
+    complement: "Poppins_500Medium",
+  },
+};
