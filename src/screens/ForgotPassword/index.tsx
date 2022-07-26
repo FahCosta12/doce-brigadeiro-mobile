@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "../../components/Button";
 import TextField from "../../components/TextField";
 import {
@@ -9,20 +10,22 @@ import {
 } from "./styles";
 
 function ForgotPassword({ navigation }: any) {
+  const [email, setEmail] = useState<string>("");
+
   return (
     <Container>
       <HeaderContainer>
         <Title>Password Reset</Title>
         <Text>
-          Enter your e-mail address and we´ll send you instructions on how to
+          Enter your e-mail address and we'll send you instructions on how to
           reset your password.
         </Text>
       </HeaderContainer>
 
       <TextField
-        onChange={() => {}}
+        onChange={(value: any) => setEmail(value.target.value)}
         text="E-mail"
-        value=""
+        value={email}
         placeholder="Enter E-mail..."
       />
 

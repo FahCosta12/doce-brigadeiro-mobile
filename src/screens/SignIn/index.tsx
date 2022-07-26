@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Container,
   FieldsContainer,
@@ -8,22 +9,38 @@ import Header from "../../components/Header";
 import Button from "../../components/Button";
 import Textfield from "../../components/TextField";
 
+interface IFormUser {
+  email: string;
+  password: string;
+}
+
 function SignIn({ navigation }: any) {
+  const [formUser, setFormUser] = useState<IFormUser>({} as IFormUser);
+
+  const handleChangeFormUser = (name: string, value: string) => {
+    setFormUser({ ...formUser, [name]: value });
+  };
+
   return (
     <Container>
       <Header text="Sign in" />
 
       <FieldsContainer>
         <Textfield
-          onChange={() => {}}
+          onChange={(value: any) =>
+            handleChangeFormUser("email", value.target.value)
+          }
           text="Email"
-          value={""}
+          value={formUser.email}
           placeholder="Enter email..."
         />
         <Textfield
-          onChange={() => {}}
+          password={true}
+          onChange={(value: any) =>
+            handleChangeFormUser("password", value.target.value)
+          }
           text="Password"
-          value={""}
+          value={formUser.password}
           placeholder="Enter password..."
         />
       </FieldsContainer>
